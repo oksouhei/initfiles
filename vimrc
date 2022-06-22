@@ -1,12 +1,15 @@
 " key mapping
 set backspace=indent,eol,start
 
+" enable clipboard
+set clipboard+=unnamed
+
 " replace tab to space
 set expandtab
 " hard tab
-set tabstop=4
+set tabstop=2
 " indent
-set shiftwidth=4
+set shiftwidth=2
 set autoindent
 
 " enable increment search
@@ -22,7 +25,6 @@ set splitbelow
 set splitright
 
 call plug#begin('~/.vim/plugged')
-"Plug 'altercation/vim-colors-solarized'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'scrooloose/nerdtree'
 "ダウンロード後自分でmakeする
@@ -36,20 +38,18 @@ Plug 'digitaltoad/vim-jade'
 Plug 'autowitch/hive.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'tpope/vim-fugitive'
+Plug 'simeji/winresizer'
+Plug 'vim-scripts/gtags.vim'
 "Plug 'joonty/vdebug'
 call plug#end()
 
-" for iterm2 color settings and vim color settings...
-set background=light
-
-"vim7.3 or later versions
 "for coding standard
 if (exists('+colorcolumn'))
     set colorcolumn=160
     highlight ColorColumn ctermbg=6
 endif
 
-" NERDTree
+" NERDTreeのショートカットキー
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 " show dotfiles
 let NERDTreeShowHidden=1
@@ -65,3 +65,8 @@ let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:18'
 
 " vimgrep, grep, Ggrep
 autocmd QuickFixCmdPost *grep* cwindow
+
+" winresizer
+let g:winresizer_start_key = '<C-A>'
+let g:winresizer_vert_resize = 1
+let g:winresizer_horiz_resize = 1
