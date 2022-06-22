@@ -27,7 +27,7 @@ alias ll='ls -lGhat'
 
 ### https://github.com/sindresorhus/pure
 autoload -U promptinit; promptinit
-PURE_PROMPT_SYMBOL='s@copper(maybe) >'
+PURE_PROMPT_SYMBOL='sohei@copper(maybe) >'
 prompt pure
 
 ### history
@@ -70,6 +70,6 @@ eval "$(rbenv init - zsh)"
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
 ### node.js
-export NVM_DIR="/Users/sohei.morita/.nvm"
+export NVM_DIR="/Users/sohei/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
