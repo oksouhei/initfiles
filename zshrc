@@ -5,15 +5,19 @@ export GIT_PAGER="lv -c"
 #export LC_ALL=C
 #export LANG=C
 export LANG=ja_JP.UTF-8
+export SHELL=/bin/zsh
 
 #JAVA
-#export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+# export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_282`
+export JAVA_HOME=`/usr/libexec/java_home -v 11`
+
+#g++
+alias g++='/usr/local/bin/g++'
 
 #python
-alias python=python3
-alias pip=pip3
-
-export PATH=$HOME/anaconda3/bin:$PATH
+#if command -v pyenv 1>/dev/null 2>&1; then
+eval "$(pyenv init -)"
+#fi
 
 ### bindkey
 bindkey -e
@@ -23,7 +27,7 @@ alias ll='ls -lGhat'
 
 ### https://github.com/sindresorhus/pure
 autoload -U promptinit; promptinit
-PURE_PROMPT_SYMBOL='m@copper(maybe) >'
+PURE_PROMPT_SYMBOL='s@copper(maybe) >'
 prompt pure
 
 ### history
@@ -61,9 +65,11 @@ setopt nolistbeep         # cut beep off at completion
 
 ### functions
 
-### rbenv
+### ruby
 eval "$(rbenv init - zsh)"
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
-### nvm
-export NVM_DIR="$HOME/.nvm"
+### node.js
+export NVM_DIR="/Users/sohei.morita/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
